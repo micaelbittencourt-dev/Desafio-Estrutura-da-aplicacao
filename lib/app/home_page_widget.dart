@@ -12,13 +12,7 @@ class HomePageState extends State<StatefulWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.purple,
-      appBar: AppBar(
-        // appBar recebe um Widget PreferredSizeWidget.
-        backgroundColor: Colors.purpleAccent,
-        title: Text("Contador"),
-        centerTitle: true,
-      ),
+      appBar: AppBarCustom(),
       body: Center(
         child: Text(
           "Contador: $count",
@@ -29,7 +23,6 @@ class HomePageState extends State<StatefulWidget> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.purpleAccent,
         onPressed: () {
           count++;
           setState(() {});
@@ -38,4 +31,12 @@ class HomePageState extends State<StatefulWidget> {
       ),
     );
   }
+}
+
+PreferredSizeWidget AppBarCustom() {
+  return AppBar(
+    // appBar recebe um Widget PreferredSizeWidget.
+    title: Text("Contador"),
+    centerTitle: true,
+  );
 }
